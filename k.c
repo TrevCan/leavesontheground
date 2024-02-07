@@ -166,6 +166,10 @@ int buscarHojas(int pasto[300][300], int width, int height, int x, int y, int nu
 		buscarHojas(pasto, width, height, x, y-1, numPila);
 	}
 
+//	if( derecha == izquierda && izquierda == abajo && abajo == arriba && abajo == 0 ){
+//		return 0;
+//	}
+
 	return 0;
 
 }
