@@ -81,6 +81,7 @@ int main(){
 
 				
 				
+				/*
 				if( hayHoja(pasto, x, y, j + 1, i) ){
 					debug_print("hoja derecha\n", 0);
 					pasto[i][j+1] = numPila;
@@ -91,9 +92,9 @@ int main(){
 					pasto[i+1][j] = numPila;
 					buscarHojas(pasto, x, y, j, i+1, numPila);
 				}
-				
+				*/
 
-				// buscarHojas(pasto, x, y, j, i, numPila);
+				buscarHojas(pasto, x, y, j, i, numPila);
 				
 			}
 			//printf("%d ", pasto[i][j]);
