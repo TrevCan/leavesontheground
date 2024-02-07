@@ -126,8 +126,9 @@ int hayHoja(int pasto[300][300], int width, int height, int x, int y){
 	return 0;
 }
 
-// solo puede escanear a su derecha o abajo
-// cada vez que encuentre una hoja adyacnete derecha o abajo
+// ANTES solo podia escanear a su derecha o abajo
+// AHORA escanea cualquier hoja adyacente
+// cada vez que encuentre una hoja adyacnete izquierda, derecha, arriba o abajo
 // debera modificar el valor a su numPila
 int buscarHojas(int pasto[300][300], int width, int height, int x, int y, int numPila){
 	// sabemos que x, y ya es hoja
@@ -144,19 +145,25 @@ int buscarHojas(int pasto[300][300], int width, int height, int x, int y, int nu
 
 	
 	int derecha = hayHoja(pasto, width, height, x+1, y);
+	int izquierda = hayHoja(pasto, width, height, x-1, y);
 	int abajo = hayHoja(pasto, width, height, x, y+1);
+	int arriba = hayHoja(pasto, width, height, x, y-1);
 	
 	if( derecha ){
 		pasto[y][x+1] = numPila;
 		buscarHojas(pasto, width, height, x+1, y, numPila);
 	}
+	if( izquierda ){
+		pasto[y][x-1] = numPila;
+		buscarHojas(pasto, width, height, x-1, y, numPila);
+	}
 	if( abajo ){
 		pasto[y+1][x] = numPila;
 		buscarHojas(pasto, width, height, x, y+1, numPila);
 	}
-
-	if( abajo == derecha && abajo == 0 ){
-		return 0;
+	if( arriba ){
+		pasto[y-1][x] = numPila;
+		buscarHojas(pasto, width, height, x, y-1, numPila);
 	}
 
 	return 0;
