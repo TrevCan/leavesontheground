@@ -24,23 +24,30 @@ Print the number of coins alan will receive after clear his yard.
 ## Example Cases
 
 Input:
+```
 4 5
 x x x x o
 x x o x o
 x x o o o
 o o o o o
+```
 
 Output:
+```
 1
+```
 
 Input:
+```
 4 5
 x x o o o
 x x o o o
 o o x o o
 o o o x x
+```
 
 Output:
+```
 3
-
+```
 
